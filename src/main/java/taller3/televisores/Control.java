@@ -1,8 +1,12 @@
 package taller3.televisores;
 
 public class Control {
-
     private TV tv;
+    
+    public void enlazar(TV tv){
+        this.tv = tv;
+        this.tv.setControl(this);
+    }
 
     public void setTv(TV tv){
         this.tv = tv;
@@ -10,6 +14,10 @@ public class Control {
 
     public TV getTv() {
         return tv;
+    }
+    
+    public void setCanal(int canal){
+        this.tv.setCanal(canal);
     }
 
     public void turnOn(){
@@ -36,12 +44,4 @@ public class Control {
         this.tv.volumenDown();
     }
 
-    public void setCanal(int canal){
-        this.tv.setCanal(canal);
-    }
-
-    public void enlazar(TV tv){
-        this.tv = tv;
-        this.tv.setControl(this);
-    }
 }
